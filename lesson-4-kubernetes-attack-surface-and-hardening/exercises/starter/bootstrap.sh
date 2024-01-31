@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "[TASK 1] Install Docker" 
+echo "[TASK 1] Install Docker"
 # install Docker
-zypper --non-interactive install docker
+zypper --non-interactive install docker=20.10.17_ce-150000.169.1
 systemctl enable docker
 usermod -G docker -a $USER
 systemctl restart docker
@@ -25,4 +25,3 @@ mkdir -p /home/rke/.ssh
 usermod -d /home/rke/ rke
 cp /root/.ssh/authorized_keys /home/rke/.ssh
 chown rke /home/rke -R
-
